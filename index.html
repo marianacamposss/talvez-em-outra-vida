@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Talvez em outra vida</title>
+</head>
+<body>
+    <header>
+        <img src="/static/logo.png" alt="logo">
+        <h1>Talvez em outra vida...</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="form">
+                <form action="/" method="post">
+                    <label>Informe seu nome</label>
+                    <input type="text" name="nome" />
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <div class="espera">
+                {% if not url_imagem %}
+                <img src="/static/espera.jpg" alt="...">
+                {% else %}
+                    <img src="{{url_imagem}}" />
+                    <p> voce seria assim {{ nome }}🤭</p>
+                {% endif %}
+                {% if erro %}
+                    <p class="erro">{{ erro }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Desenvolvido pela Mari</p>
+    </footer>
+</body>
+</html>
